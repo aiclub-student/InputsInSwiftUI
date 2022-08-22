@@ -1,26 +1,17 @@
 //
-//  AdmissionPredict.swift
-//  InputsInSwiftUI
+//  AdmissionPredict.swift in InputsInSwiftUI
 //
 //  Created by Amit Gupta on 8/21/22.
 //
 
 import SwiftUI
-import CoreML
-
 import Alamofire
 import SwiftyJSON
-//import Alamofire
-// This is for predicting battery life https://aiclub.world/projects/32e764d4-0b61-4c36-bce9-2cb85903cc33?tab=service
+
 struct AdmissionPredict: View {
     @State var prediction: String = "I don't know yet"
     
-    var aiSource=["Local","Server"]
-    @State var selectedAISource=1
-    @State var localAIsource = true
-    
     @State var params: Parameters = [:]
-    @State var agreScore: Float = 200
     @State var greScore: Float = 315
     @State var toeflScore: Float = 106
     @State var universityRating: Int = 3
@@ -36,77 +27,44 @@ struct AdmissionPredict: View {
     var body: some View {
         NavigationView {
             Form {
-                
                 Section(header: Text("Inputs")) {
-                    
-                    HStack {
-                        VStack {
-                            HStack {
-                                Image(systemName: "minus")
-                                Slider(value: $greScore, in: 290...340).onChange(of: greScore, perform: { value in
-                                    predictAI()
-                                }).accentColor(Color.green)
-                                Image(systemName: "plus")
-                            }.foregroundColor(Color.green)
-                            Text("GRE Score: \(greScore, specifier: "%.0f")")
-                        }
+                    VStack {
+                        HStack {
+                            Image(systemName: "minus")
+                            Slider(value: $greScore.onChange(predictAI), in: 290...340)
+                            Image(systemName: "plus")
+                        }.foregroundColor(Color.green)
+                        Text("GRE Score: \(greScore, specifier: "%.0f")")
                     }
-                    HStack {
-                        VStack {
-                            HStack {
-                                Image(systemName: "minus")
-                                Slider(value: $toeflScore, in: 90...120).onChange(of: toeflScore, perform: { value in
-                                    predictAI()
-                                }).accentColor(Color.green)
-                                Image(systemName: "plus")
-                            }.foregroundColor(Color.green)
-                            Text("TOEFL Score: \(toeflScore, specifier: "%.0f")")
-                        }
+                    VStack {
+                        HStack {
+                            Image(systemName: "minus")
+                            Slider(value: $toeflScore.onChange(predictAI), in: 90...120)
+                            Image(systemName: "plus")
+                        }.foregroundColor(Color.green)
+                        Text("TOEFL Score: \(toeflScore, specifier: "%.0f")")
                     }
-                    HStack {
-                        VStack {
-                            HStack {
-                                Image(systemName: "minus")
-                                Slider(value: $cgpaValue, in: 6...10).onChange(of: cgpaValue, perform: { value in
-                                    predictAI()
-                                }).accentColor(Color.green)
-                                Image(systemName: "plus")
-                            }.foregroundColor(Color.green)
-                            Text("CGPA: \(cgpaValue, specifier: "%.2f")")
-                        }
+                    VStack {
+                        HStack {
+                            Image(systemName: "minus")
+                            Slider(value: $cgpaValue.onChange(predictAI), in: 6...10)
+                            Image(systemName: "plus")
+                        }.foregroundColor(Color.green)
+                        Text("CGPA: \(cgpaValue, specifier: "%.2f")")
                     }
-                    Stepper(value: $universityRating,
-                            in: 1...5,
-                            label: {
+                    Stepper(value: $universityRating.onChange(predictAI), in: 1...5) {
                         Text("University Rating: \(self.universityRating)")
-                    }).onChange(of: universityRating, perform: { value in
-                        predictAI()
-                    })
-                    Stepper(value: $sopValue,
-                            in: 1...5,
-                            label: {
+                    }
+                    Stepper(value: $sopValue.onChange(predictAI), in: 1...5){
                         Text("SOP: \(self.sopValue)")
-                    }).onChange(of: sopValue, perform: { value in
-                        predictAI()
-                    })
-                    Stepper(value: $lorValue,
-                            in: 1...5,
-                            label: {
+                    }
+                    Stepper(value: $lorValue.onChange(predictAI), in: 1...5) {
                         Text("LOR: \(self.lorValue)")
-                    }).onChange(of: lorValue, perform: { value in
-                        predictAI()
-                    })
-                    Stepper(value: $researchValue,
-                            in: 0...1,
-                            label: {
+                    }
+                    Stepper(value: $researchValue.onChange(predictAI), in: 0...1) {
                         Text("Research Value: \(self.researchValue)")
-                    }).onChange(of: researchValue, perform: { value in
-                        predictAI()
-                    })
-                    
-                }
-                
-                
+                    }
+                }.accentColor(Color.green)
                 Section {
                     HStack {
                         Text("Prediction:").font(.largeTitle)
@@ -114,12 +72,9 @@ struct AdmissionPredict: View {
                         Text(prediction)
                     }
                 }
-            }
-            .navigationBarTitle(Text("Admit or No Admit"),displayMode: .inline)
+            }.navigationBarTitle(Text("Admit or No Admit"),displayMode: .inline)
         }.onAppear(perform: predictAI)
     }
-    
-    
     
     func predictAI() {
         print("Just got the call to PredictAI()")
@@ -169,6 +124,17 @@ struct AdmissionPredict: View {
     }
 }
 
+extension Binding {
+    func onChange(_ handler: @escaping () -> Void) -> Binding<Value> {
+        Binding(
+            get: { self.wrappedValue },
+            set: { newValue in
+                self.wrappedValue = newValue
+                handler()
+            }
+        )
+    }
+}
 
 struct AdmissionPredict_Previews: PreviewProvider {
     static var previews: some View {
