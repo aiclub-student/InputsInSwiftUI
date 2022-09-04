@@ -20,7 +20,16 @@ struct AdmissionPredict: View {
     @State var cgpaValue: Float = 8.36
     @State var researchValue: Int = 1
     
+    @State var regionChoice = "East"
+    
     let minCgpa=6.0, maxCgpa=10.0, minGre=290, maxGre=340, minToefl=90, maxToefl=120
+    
+    let regions = [
+        "East":"Eastern",
+        "West":"Western",
+        "North":"To North",
+        "South":"To South"
+    ]
     
     let uploadURL = "https://4c9kil1hsi.execute-api.us-east-1.amazonaws.com/Predict/448d1e79-95c2-4535-bada-41843c7d7279"
     
@@ -64,6 +73,12 @@ struct AdmissionPredict: View {
                     Stepper(value: $researchValue.onChange(predictAI), in: 0...1) {
                         Text("Research Value: \(self.researchValue)")
                     }
+                    Picker("Region", selection: $regionChoice.onChange(predictAI)) {
+                        ForEach(regions.sorted(by:>), id: \.key) {
+                            Text($1)
+                        }
+                    }
+                    // .pickerStyle(.wheel)
                 }.accentColor(Color.green)
                 Section {
                     HStack {

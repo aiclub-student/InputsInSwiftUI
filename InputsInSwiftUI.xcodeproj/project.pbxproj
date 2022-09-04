@@ -14,6 +14,7 @@
 		AA9E70FF28B2F45C007A9AB2 /* AdmissionPredict.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E70FE28B2F45B007A9AB2 /* AdmissionPredict.swift */; };
 		AA9E710228B2F4C8007A9AB2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AA9E710128B2F4C8007A9AB2 /* Alamofire */; };
 		AA9E710528B2F4DA007A9AB2 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AA9E710428B2F4DA007A9AB2 /* SwiftyJSON */; };
+		AAE51FA628BBC0BE00AB4AF1 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE51FA528BBC0BE00AB4AF1 /* DropdownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		AA9E70F428B2DAEC007A9AB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA9E70F728B2DAEC007A9AB2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AA9E70FE28B2F45B007A9AB2 /* AdmissionPredict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmissionPredict.swift; sourceTree = "<group>"; };
+		AAE51FA528BBC0BE00AB4AF1 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				AA9E70F028B2DAE9007A9AB2 /* InputsInSwiftUIApp.swift */,
 				AA9E70F228B2DAE9007A9AB2 /* ContentView.swift */,
 				AA9E70FE28B2F45B007A9AB2 /* AdmissionPredict.swift */,
+				AAE51FA528BBC0BE00AB4AF1 /* DropdownView.swift */,
 				AA9E70F428B2DAEC007A9AB2 /* Assets.xcassets */,
 				AA9E70F628B2DAEC007A9AB2 /* Preview Content */,
 			);
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA9E70FF28B2F45C007A9AB2 /* AdmissionPredict.swift in Sources */,
+				AAE51FA628BBC0BE00AB4AF1 /* DropdownView.swift in Sources */,
 				AA9E70F328B2DAE9007A9AB2 /* ContentView.swift in Sources */,
 				AA9E70F128B2DAE9007A9AB2 /* InputsInSwiftUIApp.swift in Sources */,
 			);
