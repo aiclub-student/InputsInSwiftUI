@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA3477F328C82E1E000670B2 /* NutritionProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3477F228C82E1E000670B2 /* NutritionProject.swift */; };
 		AA9E70F128B2DAE9007A9AB2 /* InputsInSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E70F028B2DAE9007A9AB2 /* InputsInSwiftUIApp.swift */; };
 		AA9E70F328B2DAE9007A9AB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E70F228B2DAE9007A9AB2 /* ContentView.swift */; };
 		AA9E70F528B2DAEC007A9AB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA9E70F428B2DAEC007A9AB2 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA3477F228C82E1E000670B2 /* NutritionProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionProject.swift; sourceTree = "<group>"; };
 		AA9E70ED28B2DAE9007A9AB2 /* InputsInSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InputsInSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9E70F028B2DAE9007A9AB2 /* InputsInSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputsInSwiftUIApp.swift; sourceTree = "<group>"; };
 		AA9E70F228B2DAE9007A9AB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				AA9E70F028B2DAE9007A9AB2 /* InputsInSwiftUIApp.swift */,
 				AA9E70F228B2DAE9007A9AB2 /* ContentView.swift */,
 				AA9E70FE28B2F45B007A9AB2 /* AdmissionPredict.swift */,
+				AA3477F228C82E1E000670B2 /* NutritionProject.swift */,
 				AAE51FA528BBC0BE00AB4AF1 /* DropdownView.swift */,
 				AA9E70F428B2DAEC007A9AB2 /* Assets.xcassets */,
 				AA9E70F628B2DAEC007A9AB2 /* Preview Content */,
@@ -159,6 +162,7 @@
 				AAE51FA628BBC0BE00AB4AF1 /* DropdownView.swift in Sources */,
 				AA9E70F328B2DAE9007A9AB2 /* ContentView.swift in Sources */,
 				AA9E70F128B2DAE9007A9AB2 /* InputsInSwiftUIApp.swift in Sources */,
+				AA3477F328C82E1E000670B2 /* NutritionProject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

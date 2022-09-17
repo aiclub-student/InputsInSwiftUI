@@ -12,7 +12,7 @@ struct InputsInSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            AdmissionPredict()
+            NutritionPredict()
         }
     }
 }

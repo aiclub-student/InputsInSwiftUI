@@ -139,6 +139,7 @@ struct AdmissionPredict: View {
     }
 }
 
+
 extension Binding {
     func onChange(_ handler: @escaping () -> Void) -> Binding<Value> {
         Binding(
@@ -150,6 +151,7 @@ extension Binding {
         )
     }
 }
+ 
 
 struct AdmissionPredict_Previews: PreviewProvider {
     static var previews: some View {
